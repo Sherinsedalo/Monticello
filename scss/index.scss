@@ -1,0 +1,484 @@
+@import url(../assets/fonts.css);
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.navbar-horizontal {
+  /* position the navbar center right */
+  // top: 50%;
+  // transform: translateY(-50%);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    //   display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+  }
+  a {
+    /* make them little circles */
+    display: block;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 10px;
+    height: 10px;
+
+    /* with some space between them */
+    margin: 20px 0;
+
+    // /* hide the text content */
+    // text-indent: -999px;
+    // overflow: hidden;
+
+    /* establish positioning conext for the ::after pseudo-elements (below)*/
+    position: relative;
+  }
+
+  a::after {
+    /* won't render without a 'content' rule */
+    content: "";
+
+    /* white fill */
+    background-color: #fff;
+
+    /* zero height until it's active */
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    /* animate the height when it changes */
+    transition: height 0.3s ease;
+  }
+}
+
+/* active and hovered elements */
+.navbar-horizontal a:hover::after,
+.navbar-horizontal a.active::after {
+  /* change the height to 100%.
+	   the transition rule above will cause this to animate */
+  height: 100%;
+}
+
+/* the "fill" */
+.navbar-horizontal a::after {
+  /* won't render without a 'content' rule */
+  content: "";
+
+  /* white fill */
+  background-color: #fff;
+
+  /* zero height until it's active */
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  /* animate the height when it changes */
+  transition: height 0.3s ease;
+}
+
+// note: vertical navigation dots:
+
+.navbar-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* position the navbar center right */
+.navbar-vertical {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* style the individual nav items */
+.navbar-vertical a {
+  /* make them little circles */
+  display: block;
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 10px;
+  height: 10px;
+
+  /* with some space between them */
+  margin: 20px 0;
+
+  /* hide the text content */
+  text-indent: -999px;
+  overflow: hidden;
+
+  /* establish positioning conext for the ::after pseudo-elements (below)*/
+  position: relative;
+}
+
+/* the "fill" */
+.navbar-vertical a::after {
+  /* won't render without a 'content' rule */
+  content: "";
+
+  /* white fill */
+  background-color: #fff;
+
+  /* zero height until it's active */
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  /* animate the height when it changes */
+  transition: height 0.3s ease;
+}
+
+/* active and hovered elements */
+.navbar-vertical a:hover::after,
+.navbar-vertical a.active::after {
+  /* change the height to 100%.
+	   the transition rule above will cause this to animate */
+  height: 100%;
+}
+
+/* make the sections occupy the full screen height */
+section {
+  //   height: 100vh;
+  //   display: grid;
+  //   place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+//  used https://www.css-gradient.com/
+
+.landing-page {
+  background-image: linear-gradient(
+      to right,
+      rgba(10, 198, 245, 0.52),
+      rgba(123, 31, 198, 0.52)
+    ),
+    url("../assets/images/main-page/mainpage-background.png");
+}
+
+#main-page {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 98px;
+
+    letter-spacing: 0.1em;
+
+    color: #ffffff;
+  }
+
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    letter-spacing: 0.3em;
+
+    color: #ffffff;
+  }
+}
+.travel-landing-page-scrolling-effect {
+  display: flex;
+}
+
+.scroll a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.scroll a:hover {
+  opacity: 0.5;
+}
+
+#scrolling-effect a {
+  padding-top: 70px;
+}
+#scrolling-effect a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb05 1.5s infinite;
+  animation: sdb05 1.5s infinite;
+  box-sizing: border-box;
+}
+
+#whatWeDo {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#whatWeDo h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+  color: #2c4058;
+}
+
+.whatWeDo-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h4 {
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 22px;
+      line-height: 27px;
+      color: #2c4058;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 167%;
+      color: #2c4058;
+    }
+  }
+
+  .whatWeDo__img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.location {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  color: black;
+}
+
+#international-section {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.international__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 5%;
+
+  h4 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 27px;
+    color: #2c4058;
+  }
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 54px;
+    color: #2c4058;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 167%;
+    color: #2c4058;
+  }
+}
+
+.international__img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-section {
+  height: 60vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(10, 198, 245, 1),
+      rgba(123, 31, 198, 1)
+    ),
+    url("../assets/images/footer/footer-background.png");
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+
+  &__copyrights {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+#map {
+  height: 700px;
+  width: 100%;
+}
+
+#getInTouch {
+  background-image: url("../assets/images/get-in-touch/getInTouch-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.contactUs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: space-around;
+    margin-left: 25px;
+
+    button {
+      width: 180px;
+      height: 43px;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 27px;
+      text-transform: uppercase;
+      color: black;
+      margin-top: 60px;
+      cursor: pointer;
+      opacity: 0.3;
+    }
+  }
+}
+
+input {
+  border: 1px solid gray;
+  color: gray;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+button {
+  width: 180px;
+  height: 43px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: black;
+  margin-top: 60px;
+  cursor: pointer;
+}

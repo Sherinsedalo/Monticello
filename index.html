@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Monticello</title>
+    <link rel="stylesheet" href="css/index.css" media="screen" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/main-page/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="./assets/images/main-page/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar-vertical">
+        <ul>
+          <li><a class="active" href="#main-page">Home</a></li>
+          <li><a href="#whatWeDo">What we do</a></li>
+          <li><a href="#international-section">What we do</a></li>
+          <li><a href="#latestNews">Latest News</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#getInTouch">Get in Touch</a></li>
+        </ul>
+      </nav>
+
+      <div class="landing-page">
+        <header class="navbar-horizontal">
+          <img
+            src="./assets/images/main-page/Logo.png"
+            width="20%"
+            height="50px"
+          />
+          <div class="dotstyle dotstyle-fillup">
+            <ul>
+              <li class="current"><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <section id="main-page">
+          <h1>SIMPLE & MODERN</h1>
+          <p>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+          <div class="landing-page-scrolling-effect">
+            <div id="scrolling-effect" class="scroll">
+              <a href="#whatWeDo" id="scroll-button">
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section id="whatWeDo">
+        <h1>What we do</h1>
+        <div class="whatWeDo-section">
+          <div class="whatWeDo-section__img">
+            <img
+              class="blue-rectangle"
+              src="./assets/images/whatwedo-section/blue-rectangle.svg"
+              width="50%"
+              alt=""
+            />
+            <img
+              class="building-one"
+              src="./assets/images/whatwedo-section/building1.png"
+              width="50%"
+              alt=""
+            />
+          </div>
+
+          <div class="whatWeDo-section__description">
+            <h4>One World</h4>
+
+            <p>
+              Increasing prosperity in our lives can be accomplished by having
+              the right frame of mind. The truth is, our thoughts are very
+              powerful.
+            </p>
+
+            <button>More details</button>
+            <p class="location">
+              <img
+                src="./assets/images/whatwedo-section/location-icon.svg"
+              />New York City, United States - 1776 feet
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="international-section">
+        <div class="international__description">
+          <h4>International</h4>
+          <h1>Commerce Center</h1>
+
+          <p>
+            Successful businesses have many things in common, today we’ll look
+            at the big ‘R’ of recognition and how a digital advertising network
+            may help.
+          </p>
+
+          <button>More details</button>
+
+          <p class="location">
+            <img src="./assets/images/whatwedo-section/location-icon.svg" />Hong
+            Kong - 1588 feet
+          </p>
+        </div>
+
+        <div class="international__img">
+          <img
+            class="blue-rectangle"
+            src="./assets/images/whatwedo-section/purple-rectangle.svg"
+            alt=""
+          />
+          <img
+            class="building-one"
+            src="./assets/images/whatwedo-section/International-section.png"
+            width="50%"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <section id="latestNews"></section>
+      <section id="gallery">Gallery</section>
+      <section id="getInTouch">
+        <div id="map"></div>
+        <h1>Get in Touch</h1>
+        <div class="contactUs">
+          <div class="contactUs__details">
+            <p>
+              <img
+                src="./assets/images/get-in-touch/getintouch-location-icon.svg"
+              />
+              91 Nolan Extensions Suite 670
+            </p>
+
+            <p>
+              <img src="./assets/images/get-in-touch/Phone-icon.svg" /> +001
+              356-868-2454
+            </p>
+
+            <p>
+              <img src="./assets/images/get-in-touch/inbox-icon.svg" />
+              montichello@service.com
+            </p>
+
+            <p>
+              <img src="./assets/images/get-in-touch/clock-icon.svg" /> From
+              07:05AM to 19:30PM
+            </p>
+          </div>
+
+          <form class="contactUs__form">
+            <input id="name" type="text" value="Mollie Medina" />
+            <input id="email" type="email" placeholder="email" />
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./assets/index.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YEBw46rpWqq4ViWSFHtb2JkzEneqgAQ&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+
+  <footer class="footer-section">
+    <div class="footer-section__copyrights">
+      <img
+        src="./assets/images/main-page/Logo.png"
+        width="100%"
+        height="50px"
+      />
+      <p>Copyrights © 2020 Montichello</p>
+    </div>
+
+    <div class="footer-section__icons">
+      <a href="facebook.com/">
+        <img src="./assets/images/footer/facebook-icon.svg" />
+      </a>
+
+      <a href="twitter.com">
+        <img src="./assets/images/footer/twitter-icon.svg"
+      /></a>
+
+      <a href="instagram.com">
+        <img src="./assets/images/footer/instagram-icon.svg"
+      /></a>
+    </div>
+  </footer>
+</html>
