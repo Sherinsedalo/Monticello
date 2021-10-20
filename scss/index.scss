@@ -5,89 +5,90 @@ body {
   scroll-behavior: smooth;
 }
 
-.navbar-horizontal {
-  /* position the navbar center right */
-  // top: 50%;
-  // transform: translateY(-50%);
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    //   display: inline-block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    cursor: default;
-  }
-  a {
-    /* make them little circles */
-    display: block;
-    border-radius: 50%;
-    border: 1px solid white;
-    width: 10px;
-    height: 10px;
-
-    /* with some space between them */
-    margin: 20px 0;
-
-    // /* hide the text content */
-    // text-indent: -999px;
-    // overflow: hidden;
-
-    /* establish positioning conext for the ::after pseudo-elements (below)*/
-    position: relative;
-  }
-
-  a::after {
-    /* won't render without a 'content' rule */
-    content: "";
-
-    /* white fill */
-    background-color: #fff;
-
-    /* zero height until it's active */
-    position: absolute;
-    bottom: 0;
-    height: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-
-    /* animate the height when it changes */
-    transition: height 0.3s ease;
-  }
-}
-
-/* active and hovered elements */
-.navbar-horizontal a:hover::after,
-.navbar-horizontal a.active::after {
-  /* change the height to 100%.
-	   the transition rule above will cause this to animate */
-  height: 100%;
-}
-
-/* the "fill" */
-.navbar-horizontal a::after {
-  /* won't render without a 'content' rule */
-  content: "";
-
-  /* white fill */
-  background-color: #fff;
-
-  /* zero height until it's active */
-  position: absolute;
-  bottom: 0;
-  height: 0;
-  left: 0;
-  right: 0;
+.table {
   width: 100%;
+  height: 100%;
+  display: table;
+  z-index: 2;
+}
 
-  /* animate the height when it changes */
-  transition: height 0.3s ease;
+.cell {
+  margin: auto;
+  text-align: center;
+}
+.dots {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+
+  .active {
+    a {
+      -webkit-transform: scale3d(1.3, 1.3, 1.3);
+      transform: scale3d(1.3, 1.3, 1.3);
+
+      &:after {
+        height: 100%;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+
+    margin: 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    a {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border-radius: 50%;
+      text-indent: -999em;
+      cursor: pointer;
+      position: absolute;
+      overflow: hidden;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px white;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 1px #fff;
+        -webkit-transition: height 0.3s ease;
+        transition: height 0.3s ease;
+      }
+    }
+  }
+}
+
+.navbar-icons {
+  // float: right;
+  // margin: -4.8em 1.6em 0 0;
+  display: inline;
+  width: 20%;
+  box-align: just;
+}
+
+.navbar-horizontal {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3%;
 }
 
 // note: vertical navigation dots:
@@ -154,16 +155,7 @@ body {
   height: 100%;
 }
 
-/* make the sections occupy the full screen height */
-section {
-  //   height: 100vh;
-  //   display: grid;
-  //   place-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-}
+
 //  used https://www.css-gradient.com/
 
 .landing-page {
@@ -274,8 +266,10 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-self: center;
+  padding-right: 45px;
 
   &__description {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -300,12 +294,23 @@ section {
       color: #2c4058;
     }
   }
-
-  .whatWeDo__img {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  .whatWeDo__imgs {
+    position: relative;
+    width: 50%;
   }
+}
+
+.whatWeDo-building-one {
+  width: 50%;
+  z-index: 2;
+  position: relative;
+  left: 6%;
+  bottom: 45%;
+}
+
+.blue-rectangle {
+  width: 50%;
+  z-index: 1;
 }
 
 .location {
@@ -361,10 +366,70 @@ section {
   }
 }
 
-.international__img {
+.international__imgs {
+  position: relative;
+  width: 100%;
+}
+
+.building-one {
+  padding-top: 63px; 
+  padding-right: 33%;
+  width: 60%; 
+  height: 40%;
+}
+
+.purple-rectangle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65%; 
+  z-index: -1;
+}
+
+#latestNews {
+  background-image: url(../assets/images/News-section/LatestNews-background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  padding: 20px;
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+  }
+}
+
+.latestNews__imgs {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+
+  margin: 18px;
+}
+
+.gallery__imgs {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 .footer-section {

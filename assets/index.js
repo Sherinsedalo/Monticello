@@ -1,16 +1,16 @@
-// listen for clicks on the navbar
-document.querySelector(".navbar").addEventListener("click", (e) => {
-  // ignore it if the click isn't on an anchor element
-  if (e.target.tagName.toLowerCase() === "a") {
-    // remove the 'active' class from all of the nav anchors
-    document
-      .querySelectorAll(".navbar a")
-      .forEach((e) => e.classList.remove("active"));
+// // listen for clicks on the navbar
+// document.querySelector(".navbar").addEventListener("click", (e) => {
+//   // ignore it if the click isn't on an anchor element
+//   if (e.target.tagName.toLowerCase() === "a") {
+//     // remove the 'active' class from all of the nav anchors
+//     document
+//       .querySelectorAll(".navbar a")
+//       .forEach((e) => e.classList.remove("active"));
 
-    // add the 'active' class to the clicked element
-    e.target.classList.add("active");
-  }
-});
+//     // add the 'active' class to the clicked element
+//     e.target.classList.add("active");
+//   }
+// });
 
 $(function () {
   var scrollButton = document.getElementById("scroll-button");
@@ -24,10 +24,10 @@ $(function () {
 
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
+  // The location of new-york
   // const uluru = { lat: -25.344, lng: 131.036 };
   const newYork = { lat: 40.70650809943554, lng: -74.00219868887126 };
-  // The map, centered at Uluru
+  // The map, centered at newYork
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 8,
     center: newYork,
@@ -38,13 +38,8 @@ function initMap() {
     map: map,
   });
 }
-// Set  input color on value
-var gfg = document.getElementById("email");
-gfg.onchange = function (e) {
 
-  console.log("test")
-  if (gfg.value != "") {
-    e.target.style.borderBottom = "1px black solid";
-    e.target.style.color = "black";
-  }
-};
+$(".dots li").click(function () {
+  $(".active").removeClass("active");
+  $(this).addClass("active");
+});
